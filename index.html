@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rashmi ❤️ Valentine Vrindavan Date</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+      background-size: 400% 400%;
+      animation: romanticgradient 12s ease infinite;
+
+    }
+      @keyframes romanticGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.93);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 520px;
+      box-shadow:
+      0 0 20px rgba(255, 105, 180, 0.4),
+      0 0 40px rgba(255, 182, 193, 0.3);
+    }
+
+    h1 {
+      color: #ff2f6d;
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    #yesBtn {
+      background: #ff2f6d;
+      color: white;
+      font-weight: bold;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+      background: #ff004c;
+    }
+
+    #noBtn {
+      background: #444;
+      color: white;
+      position: absolute;
+      left: 220px;
+      top: 0px;
+    }
+
+    #dialogue {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #ff004c;
+      font-weight: bold;
+      height: 35px;
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 6s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    /* Love Page */
+    #lovePage {
+      display: none;
+      position: relative;
+      z-index: 5;
+      background: rgba(255,255,255,0.96);
+      padding: 50px;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    }
+
+    #lovePage h2 {
+      color: #ff004c;
+      font-size: 28px;
+    }
+
+    #lovePage p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Fireworks */
+    .firework {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+      z-index: 10;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(10); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Main Card -->
+  <div class="card" id="mainCard">
+    <h1>Rashmi 💖</h1>
+    <p>
+      My love, will you go on a magical Vrindavan date with me <br>
+      on <b>14th February</b> — this Valentine’s Day? 🌸✨
+    </p>
+
+    <div id="dialogue"></div>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes I will my love 💘</button>
+      <button id="noBtn">No 😢</button>
+    </div>
+  </div>
+
+  <!-- Love Letter Page -->
+  <div id="lovePage">
+    <h2>YAYYYY Rashmi 💖🎆</h2>
+    <p>
+      Rashmi, you just made me the happiest person alive 🥰 <br><br>
+      This Valentine’s Day will be unforgettable, because I get to spend it with YOU.  
+      Vrindavan will feel even more magical with your hand in mine 🌸💫  
+      <br><br>
+      I promise romance, laughter, sweets, and endless love ❤️  
+      <br><br>
+      See you on <b>14th Feb</b>, my forever Valentine 💘  
+    </p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const dialogue = document.getElementById("dialogue");
+
+    const dialogues = [
+      "Oh come on 😭",
+      "Rashmi you know you want to 😏",
+      "Don't break my heart 💔",
+      "Vrindavan will be sooo romantic 🌸",
+      "It’s already time you start showing some love 💘",
+      "Say yes my princess 👑",
+      "I’ll bring sweets too 🍬",
+      "Just click YES already 😍"
+    ];
+
+    let index = 0;
+
+    // Dialogue change
+    setInterval(() => {
+      dialogue.textContent = dialogues[index];
+      index = (index + 1) % dialogues.length;
+    }, 2000);
+
+    // No button runs away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 150);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    // Fireworks Effect
+    function fireworks() {
+      for (let i = 0; i < 12; i++) {
+        const firework = document.createElement("div");
+        firework.classList.add("firework");
+
+        firework.style.left = Math.random() * 100 + "vw";
+        firework.style.top = Math.random() * 100 + "vh";
+        firework.style.background = `hsl(${Math.random() * 360},100%,60%)`;
+
+        document.body.appendChild(firework);
+
+        setTimeout(() => firework.remove(), 1000);
+      }
+    }
+
+    // YES button click
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      fireworks();
+      setTimeout(() => {
+        document.getElementById("mainCard").style.display = "none";
+        document.getElementById("lovePage").style.display = "block";
+      }, 1200);
+    });
+
+    // Floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
